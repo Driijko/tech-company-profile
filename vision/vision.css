@@ -313,7 +313,6 @@ main h3, main section div.snap-point {
   transition-property: border-radius, color, border-color, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
-  /* padding: 0.5rem; */
 }
 
 @media (hover:hover) {
@@ -364,7 +363,6 @@ main h3, main section div.snap-point {
   height: calc(var(--vh, 1vh) * 100);
   transform: translateY(0);
   transition: transform 0.7s ease-in-out;
-  /* transition: transform 0s ease-in-out; */
   position: fixed;
   top: 0;
 }
@@ -670,14 +668,14 @@ main h3, main section div.snap-point {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    background-image: url("./assets/images/site-footer-bkg-medium.webp");
+    background-image: url("../assets/images/site-footer-bkg-medium.webp");
     background-size: cover;
   }
 }
 
 @media only screen and (min-width: 1920px) and (min-height: 720px) {
   #pamphlet-site-footer {
-    background-image: url("./assets/images/site-footer-bkg-large.webp");
+    background-image: url("../assets/images/site-footer-bkg-large.webp");
   }
 }
 
