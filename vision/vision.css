@@ -353,12 +353,6 @@ main h3, main section div.snap-point {
   width: 100%;
 }
 
-#window-height-test {
-  display: absolute;
-  width: 0;
-  height: 100vh;
-}
-
 #scroll-snap-container {
   height: calc(var(--vh, 1vh) * 100);
   transform: translateY(0);
