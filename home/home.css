@@ -142,6 +142,14 @@ svg {
   gap: 1rem;
 }
 
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
 html {
   font-size: 16px;
   font-family: 'Ubuntu', sans-serif;
@@ -187,7 +195,7 @@ svg path {
 main .section1 p {
   color: var(--color2-1);
 }
-main .section1 ul li {
+main .section1 li > div {
   background-color: var(--color1-2);
 }
 
@@ -506,50 +514,10 @@ main .section4 li {
   top: 0;
 }
 
-.vp {
-  width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-.vp2 {
-  width: 100vw;
-  height: calc(var(--vh, 1vh) * 200);
-}
-
-.vp3 {
-  width: 100vw;
-  height: calc(var(--vh, 1vh) * 300);
-}
-
-.cruncher {
-  position: relative;
-}
-
-.snap-pos1, .snap-pos2, .snap-pos3 {
-  position: absolute;
-}
-
-.vp2 .snap-pos1, .vp3 .snap-pos1 {
-  top: 0%;
-}
-
-.vp2 .snap-pos2 {
-  top: 50%;
-}
-
-.vp3 .snap-pos2 {
-  top: 33.333%;
-}
-
-.vp3 .snap-pos3 {
-  top: 66.666%;
-}
-
 @media only screen and (orientation: landscape) {
-  .vp2.cruncher, .vp3.cruncher, 
-  .cruncher .vp2, .cruncher .vp3 {
+  .cruncher {
     height: calc(var(--vh, 1vh) * 100);
-  } 
+  }
 }
 
 .covering-modal {
@@ -1300,18 +1268,22 @@ main header .scroll-indicator svg {
 }
 
 /* SECTION 1 ///////////////////////////////// */
+:root {
+  --vph: calc(var(--vh, 1vh) * 100)
+}
 main .section1 {
-  position: relative;
   text-align: center;
 }
 
-main .section1 .snap-pos1 {
+main .section1 .area1 {
+  height: var(--vph);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 1rem;
   row-gap: 5vh;
+  position: relative;
 }
 
 main .section1 h3 {
@@ -1327,49 +1299,49 @@ main .section1 p {
 }
 
 main .section1 .background {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
   background-image: url("./assets/pic2-small.webp");
-  background-size: cover;
   filter: brightness(0.1);
 }
 
-main .section1 ul {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+main .section1 li {
+  height: calc(var(--vph)/2);
+  width: 100%;
 }
 
-main .section1 ul li {
-  height: 23%;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 2rem;
+main .section1 li > div {
   max-width: 400px;
   max-height: 400px;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 2rem;
+  padding: 5vh 5vw;
 }
 
-main .section1 ul li svg {
-  width: 2.5rem;
+main .section1 li svg {
+  width: 10vw;
 }
 
-main .section1 ul li h4 {
-  font-size: 1.5rem;
+main .section1 li h4 {
+  font-size: calc(1.2rem + 0.2vh);
   line-height: 1.5;
 }
 
-main .section1 ul li p {
+main .section1 li p {
+  font-size: calc(1rem + 0.1vh);
   line-height: 1.5;
   padding: 0 1rem;
+}
+
+@media only screen and (orientation: portrait) and (min-width: 800px) {
+  main .section1 li > div {
+    max-width: 500px;
+    max-height: 500px;
+    gap: 1rem;
+  }
+
+  main .section1 li svg {
+    width: 7vw;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -1384,26 +1356,24 @@ main .section2 h3 {
   text-align: center;
   line-height: 3;
   font-size: 1.3rem;
+  height: var(--vph);
+  width: 100vw;
 }
 
 main .section2 h3 .background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
   background-image: linear-gradient(
     black, 
     transparent 20%,
     transparent 80%, 
     black)
     , url("./assets/pic3-small.webp");
-  background-size: cover;
   filter: brightness(0.15);
 }
 
-main .section2 .snap-pos2 {
+main .section2 .area1 {
   flex-direction: column;
   row-gap: 4vh;
+  height: var(--vph);
 }
 
 main .section2 p {
@@ -1422,6 +1392,7 @@ main .section2 a {
 main .section3 {
   flex-direction: column;
   row-gap: 4vh;
+  height: var(--vph);
 }
 
 main .section3 .background {
@@ -1439,7 +1410,7 @@ main .section3 dl {
 
 main .section3 dl dt {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 main .section3 dl dd {
@@ -1480,6 +1451,7 @@ main .section3 dl dd:nth-of-type(4) {
 
 main .section3 dl dt:nth-of-type(5) {
   order: 10;
+  margin-bottom: 0;
 }
 
 main .section3 dl dd:nth-of-type(5) {
@@ -1491,6 +1463,7 @@ main .section4 {
   flex-direction: column;
   row-gap: 5vh;
   width: 100%;
+  height: var(--vph);
 }
 
 main .section4 h3 {
@@ -1526,6 +1499,7 @@ main .section5 {
   display: flex;
   align-items: center;
   row-gap: 5vh;
+  height: var(--vph);
 }
 
 main .section5 h3 {
@@ -1536,12 +1510,7 @@ main .section5 h3 {
 }
 
 main .section5 .background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
   background-image: url("./assets/pic9-small.webp");
-  background-size: cover;
   filter: brightness(0.7);
 }
 
@@ -1590,38 +1559,56 @@ main .section5 a {
   }
 
   /* SECTION 1 /////////////////////////////////////// */
-  main .section1 .snap-pos1 {
+  main .section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main .section1 .area1 {
     height: 80%;
     width: 40%;
-    top: 10%;
-    left: 5%;
     border-width: 0.1rem;
     border-style: solid; 
   }
-
-  main .section1 .snap-pos1 p {
+  
+  main .section1 .area1 p {
     max-width: 70%;
   }
 
   main .section1 ul {
-    display: block;
-    position: relative;
-    top: 10% !important;
-    left: 45%;
-    height: 80% !important;
     width: 50%;
+    height: 80%;
+    position: relative;
     border-width: 0.1rem;
     border-style: solid; 
     border-left: none;
   }
-
-  main .section1 ul li {
+  
+  main .section1 li {
     position: absolute;
     width: 40%;
     height: 50%;
+  }
+  
+  main .section1 li > div {
     max-width: none;
     max-height: none;
-    row-gap: 3vh;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  
+  main .section1 li svg {
+    width: 2rem;
+  }
+
+  main .section1 li h4 {
+    font-size: 1rem;
+  }
+
+  main .section1 li p {
+    font-size: 0.8rem;
   }
 
   main .section1 ul li:nth-child(1) {
@@ -1644,32 +1631,23 @@ main .section5 a {
     left: 51%;
   }
 
-  main .section1 ul li h4 {
-    font-size: 1rem;
-  }
-
-  main .section1 ul li p {
-    font-size: 0.8rem;
-  }
-
   /* SECTION 2 ////////////////////////////// */
+  main .section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   main .section2 h3 {
-    position: absolute;
     width: 45%;
     height: 90%;
     border-width: 0.1rem;
     border-style: solid;
-    top: 5% !important;
-    left: 5%;
     font-size: 1.8rem;
   }
 
-  main .section2 .snap-pos2 {
-    position: absolute;
+  main .section2 .area1 {
     padding: 0;
-    top: 5%;
     width: 45%;
-    left: 50%;
     height: 90%;
     border-width: 0.1rem;
     border-style: solid;
@@ -1692,13 +1670,10 @@ main .section5 a {
 
   main .section3 .background {
     display: block;
-    position: absolute;
     left: 0%;
     top: 50%;
-    width: 100%;
     height: 50%;
     background-image: url("./assets/pic4-medium.webp");
-    background-size: cover;
     filter: hue-rotate(150deg);
   }
 
