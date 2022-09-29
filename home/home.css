@@ -1460,6 +1460,7 @@ main .section3 dl dd:nth-of-type(5) {
 
 /* SECTION 4 /////////////////////////////////// */
 main .section4 {
+  overflow: hidden;
   flex-direction: column;
   row-gap: 5vh;
   width: 100%;
