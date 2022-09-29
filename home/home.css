@@ -1462,7 +1462,7 @@ main .section3 dl dd:nth-of-type(5) {
 main .section4 {
   overflow: hidden;
   flex-direction: column;
-  row-gap: 5vh;
+  row-gap: calc(var(--vh) * 5);
   width: 100%;
   height: var(--vph);
 }
@@ -1480,7 +1480,7 @@ main .section4 li {
   width: 100%;
   border-top-width: 0.1rem;
   border-top-style: solid;
-  height: 20vh;
+  height: calc(var(--vh) * 20);
 }
 
 main .section4 li:nth-child(4) {
