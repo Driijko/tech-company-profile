@@ -158,6 +158,10 @@ svg {
   z-index: -1;
 }
 
+.fade-in {
+  opacity: 0;
+}
+
 @media only screen and (orientation: landscape) {
   .portrait {
     display: none;
@@ -188,7 +192,41 @@ html {
   }
 }
 
+#loading-screen {
+  position: relative;
+  width: 100vw;
+  height: var(--vph);
+  flex-direction: column;
+  row-gap: 5rem;
+  transition: opacity 3s ease-in;
+}
 
+#loading-screen h1 {
+  flex-direction: column;
+  font-size: 2rem;
+  row-gap: 0.5rem;
+}
+
+#loading-screen h1 svg {
+  width: 2rem;
+}
+
+#loading-screen p {
+  font-size: 1.5rem;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg) scale(0.1);}
+  50% {transform: rotate(360deg) scale(1);}
+  100% {transform: rotate(360deg) scale(0.1);}
+}
+
+#loading-graphic {
+  position: absolute;
+  width: 100vw;
+  height: var(--vph);
+  animation: rotate 5s linear infinite; 
+}
 
 /* COLOR ////////////////////////////////////////////////////////////// */
 /* GENERAL ///////////////////////////////// */
@@ -356,6 +394,7 @@ svg path {
   border-bottom-style: solid;
   border-bottom-width: 0.3rem;
   position: relative;
+  transition: opacity 2s ease-in;
 }
 
 #site-header > * {
@@ -1076,6 +1115,7 @@ svg path {
     border-width: 0.05rem;
     border-style: solid;
     border-radius: 0.3rem;
+    transition: opacity 1s 5s ease-in;
   }
 
   #chat-aside button {
@@ -1089,6 +1129,11 @@ svg path {
   }
 }
 
+@media only screen and (orientation: landscape) {
+  #chat-aside {
+    transition: opacity 1s 6.5s ease-in;
+  }
+}
 /* CHAT MODAL ////////////////////////// */
 #chat-modal {
   position: fixed;
@@ -1201,7 +1246,6 @@ svg path {
   width: 100vw;
   transform: translateY(0);
   transition: transform 0.7s ease-in-out;
-  /* transition: transform 0s ease-in-out; */
   position: fixed;
   top: 0;
 }
@@ -1230,6 +1274,7 @@ main header {
   main header .background1 {
     background-image: url("./assets/pic1-small.webp");
     filter: brightness(0.2) blur(1px);
+    transition: opacity 2s ease-in;
   }
   main .background2 {
     display: none;
@@ -1238,16 +1283,19 @@ main header {
 
 h2 {
   font-size: 2rem;
+  transition: opacity 1s 2s ease-in;
 }
 
 main header p {
   font-size: 1.3rem;
   padding: 0 1rem;
   max-width: 320px;
+  transition: opacity 1s 3s ease-in;
 }
 
 main header .scroll-indicator {
   width: 2rem;
+  transition: opacity 1s 4s ease-in;
 }
 
 main li {
@@ -1340,6 +1388,7 @@ main li a {
   main .background2 {
     background-image: url("./assets/pic1-small.webp");
     filter: brightness(0.2) blur(2px);
+    transition: opacity 2s ease-in;
   }
 
   main header {
@@ -1370,6 +1419,16 @@ main li a {
     height: 100%;
     row-gap: 0;
     justify-content: space-around;
+  }
+
+  main li:nth-child(1) {
+    transition: opacity 1s 4s ease-in;
+  }
+  main li:nth-child(2) {
+    transition: opacity 1s 4.5s ease-in;
+  }
+  main li:nth-child(3) {
+    transition: opacity 1s 5s ease-in;
   }
 
   main li svg {

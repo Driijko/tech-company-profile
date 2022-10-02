@@ -40,7 +40,7 @@
 
   <div id="scroll-snap-container">
 
-    <header id="site-header" class="snap-point landscape-snap">
+    <header id="site-header" class="snap-point landscape-snap fade-in">
   
       <div class="area1">
         <h1>
@@ -102,21 +102,21 @@
     </header>
   
     <main>
-      <div class="background background2"></div>
+      <div class="background background2 fade-in"></div>
 
       <header class="center">
-        <div class="background background1"></div>
-        <h2>Data Analysis Programs</h2>
-        <p>
+        <div class="background background1 fade-in"></div>
+        <h2 class="fade-in">Data Analysis Programs</h2>
+        <p class="fade-in">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br class="landscape"/> Laudantium quis blanditiis ex provident quibusdam.
         </p>
-        <svg class="portrait scroll-indicator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <svg class="portrait scroll-indicator fade-in" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
         </svg>
       </header>
 
       <ul>
-        <li class="snap-point">
+        <li class="snap-point fade-in">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
             <path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"/>
           </svg>
@@ -127,7 +127,7 @@
           </p>
           <a class="interface-style1 center" href="">Join</a>
         </li>
-        <li class="snap-point">
+        <li class="snap-point fade-in">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5  center45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
           </svg>
@@ -138,7 +138,7 @@
           </p>
           <a class="interface-style1 center" href="">Join</a>
         </li>
-        <li class="snap-point">
+        <li class="snap-point fade-in">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
             <path d="M256 64H384v64H256V64zM240 0c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h48v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H240c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H192V288H448v32H400c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H560c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H512V288h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V192h48c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H240zM96 448V384H224v64H96zm320-64H544v64H416V384z"/>
           </svg>
@@ -328,7 +328,7 @@
     </div>
   </dialog>
 
-  <aside id="chat-aside" >
+  <aside id="chat-aside" class="fade-in" >
     <button class="chat-modal-opener center link-style1" type="button">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <title>Live chat with us</title><path d="M256 32C114.6 32 .0272 125.1 .0272 240c0 47.63 19.91 91.25 52.91 126.2c-14.88 39.5-45.87 72.88-46.37 73.25c-6.625 7-8.375 17.25-4.625 26C5.818 474.2 14.38 480 24 480c61.5 0 109.1-25.75 139.1-46.25C191.1 442.8 223.3 448 256 448c141.4 0 255.1-93.13 255.1-208S397.4 32 256 32zM256.1 400c-26.75 0-53.12-4.125-78.38-12.12l-22.75-7.125l-19.5 13.75c-14.25 10.12-33.88 21.38-57.5 29c7.375-12.12 14.37-25.75 19.88-40.25l10.62-28l-20.62-21.87C69.82 314.1 48.07 282.2 48.07 240c0-88.25 93.25-160 208-160s208 71.75 208 160S370.8 400 256.1 400z"/></svg>
@@ -400,6 +400,17 @@
         </div>
       </section>
     </div>
+  </dialog>
+
+  <dialog id="loading-screen" class="center" open >
+    <h1 class="center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zm64 0c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256z"/></svg>
+        <span>VISTA.IO</span>
+    </h1>
+    <p>Loading...</p>
+    <svg id="loading-graphic">
+      <rect x="10%" y="25%" width="80%" height="50%" fill="hsla(0, 100%, 50%, 0.2)" stroke="black" stroke-width="10" />
+    </svg>
   </dialog>
 
   <!-- SCRIPTS /////////////////////////////// -->
