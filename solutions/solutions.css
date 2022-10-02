@@ -259,9 +259,9 @@ svg path {
 
 /* MAIN SECTION 1 //////////////////////////////////// */
 #sticky1 {
-  border-bottom-color: var(--color3);
-  background-color: var(--color1);
-  color: var(--color3);
+  border-bottom-color: var(--color4);
+  background-color: var(--color4);
+  color: var(--color1);
 }
 
 main .section1 li {
