@@ -1213,12 +1213,27 @@ svg path {
 }
 
 /* PROGRAMS PORTRAIT /////////////////////////////////////////////// */
+main {
+  position: relative;
+}
+
 main header {
+  position: relative;
   height: calc(var(--vph) - 5rem);
   text-align: center;
   line-height: 1.5;
   flex-direction: column;
   row-gap: 2rem;
+}
+
+@media only screen and (orientation: portrait) {
+  main header .background1 {
+    background-image: url("./assets/pic1-small.webp");
+    filter: brightness(0.2) blur(1px);
+  }
+  main .background2 {
+    display: none;
+  }
 }
 
 h2 {
@@ -1310,10 +1325,23 @@ main li a {
   }
 } 
 
+
+/* PROGRAMS LANDSCAPE ////////////////////////////// */
+
 @media only screen and (orientation: landscape) {
   main {
     height: calc(var(--vph) - 5rem);
   }
+
+  main .background1 {
+    display: none;
+  }
+
+  main .background2 {
+    background-image: url("./assets/pic1-small.webp");
+    filter: brightness(0.2) blur(2px);
+  }
+
   main header {
     height: 30%;
     row-gap: 1rem;
@@ -1373,12 +1401,35 @@ main li a {
 
 }
 
+/* PROGRAMS COLOR///////////////////////// */
 main li {
   color: var(--color2-1);
   border-color: var(--color2-2);
+  background-color: var(--color1);
 }
 
 main li svg {
   background-color: var(--color1-2);
   color: var(--color3);
+}
+
+/* BACKGROUND IMAGES ///////////////////////////////// */
+@media only screen and (min-width: 600px) {
+  main .background1 {
+    background-image: url("./assets/pic1-medium.webp");
+  }
+
+  main .background2 {
+    background-image: url("./assets/pic1-medium.webp");
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  main .background1 {
+    background-image: url("./assets/pic1-large.webp");
+  }
+
+  main .background2 {
+    background-image: url("./assets/pic1-large.webp");
+  }
 }
