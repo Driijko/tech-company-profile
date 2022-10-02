@@ -88,6 +88,10 @@ a, button, input {
   box-sizing: border-box;
 }
 
+:root {
+  --vph: calc(var(--vh) * 100);
+}
+
 body {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;  
@@ -159,6 +163,10 @@ svg {
   z-index: -1;
 }
 
+.fade-in {
+  opacity: 0;
+}
+
 @media only screen and (orientation: landscape) {
   .portrait {
     display: none;
@@ -188,6 +196,42 @@ html {
   }
 }
 
+#loading-screen {
+  position: relative;
+  width: 100vw;
+  height: var(--vph);
+  flex-direction: column;
+  row-gap: 5rem;
+  transition: opacity 3s ease-in;
+}
+
+#loading-screen h1 {
+  flex-direction: column;
+  font-size: 2rem;
+  row-gap: 0.5rem;
+}
+
+#loading-screen h1 svg {
+  width: 2rem;
+}
+
+#loading-screen p {
+  font-size: 1.5rem;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg) scale(0.1);}
+  50% {transform: rotate(360deg) scale(1);}
+  100% {transform: rotate(360deg) scale(0.1);}
+}
+
+#loading-graphic {
+  position: absolute;
+  width: 100vw;
+  height: var(--vph);
+  animation: rotate 5s linear infinite; 
+}
+
 /* GENERAL ///////////////////////////////// */
 :root {
   --color1: black;
@@ -210,6 +254,7 @@ svg path {
 /* SITE HEADER //////////////////////////////////// */
 #site-header {
   border-color: var(--color2);
+  transition: opacity 2s ease-in;
 }
 
 /* MAIN SECTION 1 //////////////////////////////////// */
@@ -1157,6 +1202,7 @@ main .section2 h3 {
     border-width: 0.05rem;
     border-style: solid;
     border-radius: 0.3rem;
+    transition: opacity 1s 4s ease-in;
   }
 
   #chat-aside button {
@@ -1282,12 +1328,14 @@ main header {
 main header .background {
   background-image: url("./assets/pic1-small.webp");
   filter: brightness(0.2);
+  transition: opacity 2s ease-in;
 }
 
 h2 {
   text-align: center;
   line-height: 1.7;
   font-size: 1.5rem;
+  transition: opacity 1s 2s ease-in;
 }
 
 main header svg {
@@ -1295,6 +1343,7 @@ main header svg {
   background-color: hsla(0, 0%, 0%, 0.7);
   padding: 0.5rem;
   border-radius: 50%;
+  transition: opacity 1s 3s ease-in;
 }
 
 @media only screen and (orientation: portrait) and (min-width: 800px) {
