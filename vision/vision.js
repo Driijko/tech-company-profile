@@ -6,16 +6,17 @@ document.documentElement.style.setProperty("--res", window.innerWidth * window.i
 const viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
 
 let refreshReady = false;
-window.addEventListener("resize", e => {
-  if (refreshReady === false) {
-    refreshReady = true;
-    const timerId = setTimeout(()=> {
-      window.location.reload();
-    }, 2000);
-  }
-});
+
 
 window.addEventListener("load", ()=> {
+  window.addEventListener("resize", e => {
+    if (refreshReady === false) {
+      refreshReady = true;
+      const timerId = setTimeout(()=> {
+        window.location.reload();
+      }, 2000);
+    }
+  });
   const loadingScreen = document.getElementById("loading-screen");
   loadingScreen.style.opacity = 0;
   const timerId = setTimeout(()=> {
