@@ -32,8 +32,6 @@ window.addEventListener("load", ()=> {
   }, 3000);
 });
 
-
-
 // ELEMENTS     //////////////////////////////////////////////
 const scrollSnapContainer = document.querySelector("#scroll-snap-container");
 const snapPoints = Array.from(

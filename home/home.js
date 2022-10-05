@@ -5,26 +5,31 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.style.setProperty("--res", window.innerWidth * window.innerHeight);
 const viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
 
+let refreshReady = false;
+
 window.addEventListener("load", ()=> {
+
   const loadingScreen = document.getElementById("loading-screen");
   loadingScreen.style.opacity = 0;
+
   const timerId = setTimeout(()=> {
+
+    window.addEventListener("resize", e => {
+      if (refreshReady === false) {
+        refreshReady = true;
+        const timerId = setTimeout(()=> {
+          clearTimeout(timerId);
+          window.location.reload();
+        }, 2000);
+      }
+    });
+
     loadingScreen.style.display = "none";
     const fadeIns = Array.from(document.querySelectorAll(".fade-in"));
     fadeIns.forEach(element => {
       element.style.opacity = 1;
     });
   }, 3000);
-});
-
-let refreshReady = false;
-window.addEventListener("resize", e => {
-  if (refreshReady === false) {
-    refreshReady = true;
-    const timerId = setTimeout(()=> {
-      window.location.reload();
-    }, 2000);
-  }
 });
 
 // CONSTANTS and VARIABLES //////////////////////////////////////////////
