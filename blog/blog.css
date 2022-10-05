@@ -193,7 +193,8 @@ html {
 }
 
 #loading-screen {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100vw;
   height: var(--vph);
   flex-direction: column;
@@ -1127,6 +1128,7 @@ svg path {
     border-width: 0.05rem;
     border-style: solid;
     border-radius: 0.3rem;
+    transition: opacity 1s 5s ease-in;
   }
 
   #chat-aside button {
@@ -1249,6 +1251,7 @@ main h2 {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  transition: opacity 2s 1s ease-in;
 }
 
 @media only screen and (min-width: 600px) {
@@ -1276,6 +1279,7 @@ main ul {
   row-gap: 1rem;
   column-gap: 1rem;
   padding: 2rem 0;
+  transition: opacity 2s 3s ease-in;
 }
 
 main li {
@@ -1353,12 +1357,6 @@ main button.icon-pair svg {
 
 
 /* BACKGROUND IMAGES ///////////////////////////////// */
-@media only screen and (min-width: 600px) {
-  /* main h2 .background {
-    background-image: url("./assets/pic1-medium.webp");
-  } */
-}
-
 @media only screen and (min-width: 1920px) {
   main h2 .background {
     background-image: url("./assets/pic1-large.webp");

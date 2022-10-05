@@ -6,19 +6,19 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.style.setProperty("--res", window.innerWidth * window.innerHeight);
 const viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
 
-// window.addEventListener("load", ()=> {
+window.addEventListener("load", ()=> {
 
-//   const loadingScreen = document.getElementById("loading-screen");
-//   loadingScreen.style.opacity = 0;
+  const loadingScreen = document.getElementById("loading-screen");
+  loadingScreen.style.opacity = 0;
 
-//   const timerId = setTimeout(()=> {
-//     loadingScreen.style.display = "none";
-//     const fadeIns = Array.from(document.querySelectorAll(".fade-in"));
-//     fadeIns.forEach(element => {
-//       element.style.opacity = 1;
-//     });
-//   }, 3000);
-// });
+  const timerId = setTimeout(()=> {
+    loadingScreen.style.display = "none";
+    const fadeIns = Array.from(document.querySelectorAll(".fade-in"));
+    fadeIns.forEach(element => {
+      element.style.opacity = 1;
+    });
+  }, 3000);
+});
 // MODALS///////////////////////////////////////////////////////
 // CHAT MODAL ////////////////////////////////
 const chatModal = document.getElementById("chat-modal");
