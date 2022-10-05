@@ -1231,6 +1231,11 @@ svg path {
 }
 
 /* PROGRAM PORTRAIT /////////////////////////////////////////////// */
+main header, main section {
+  border-bottom-width: 0.1rem;
+  border-bottom-style: solid;
+}
+
 main header {
   flex-direction: column;
   height: 15rem;
@@ -1286,7 +1291,7 @@ main .section3 {
   flex-direction: column;
   height: 13rem;
   row-gap: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 main .section3 ul {
@@ -1357,6 +1362,10 @@ main .section3 ul svg {
 /* PROGRAM COLOR///////////////////////// */
 main {
   background-color: var(--color1-3);
+}
+
+main header, main section {
+  border-bottom-color: var(--color4);
 }
 
 @media only screen and (orientation: landscape) {
