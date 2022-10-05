@@ -1263,7 +1263,7 @@ main h2 {
 }
 
 main h2 .background {
-  background-image: url("./assets/pic1-small.webp");
+  background-image: url("./assets/pic1-medium.webp");
   filter: invert(100%);
 }
 
@@ -1354,9 +1354,9 @@ main button.icon-pair svg {
 
 /* BACKGROUND IMAGES ///////////////////////////////// */
 @media only screen and (min-width: 600px) {
-  main h2 .background {
+  /* main h2 .background {
     background-image: url("./assets/pic1-medium.webp");
-  }
+  } */
 }
 
 @media only screen and (min-width: 1920px) {
