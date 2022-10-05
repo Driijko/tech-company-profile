@@ -1,3 +1,4 @@
+// VIEWPORT ///////////////////////////////////////////////////////////////
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
@@ -5,96 +6,32 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.style.setProperty("--res", window.innerWidth * window.innerHeight);
 const viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
 
+// RESIZE REFRESH ////////////////////////////////////////////////////
 let refreshReady = false;
-window.addEventListener("load", ()=> {
-  window.addEventListener("resize", e => {
-    if (refreshReady === false) {
-      refreshReady = true;
-      const timerId = setTimeout(()=> {
-        window.location.reload();
-      }, 2000);
-    }
-  });
-  const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.style.opacity = 0;
-  const timerId = setTimeout(()=> {
-    loadingScreen.style.display = "none";
-    const fadeIns = Array.from(document.querySelectorAll(".fade-in"));
-    fadeIns.forEach(element => {
-      element.style.opacity = 1;
-    });
-  }, 3000);
-});
-
-
-
-// ELEMENTS     //////////////////////////////////////////////
-const scrollSnapContainer = document.querySelector("#scroll-snap-container");
-const snapPoints = Array.from(
-  document.querySelectorAll(
-    viewportOrientation === "landscape" ? ".landscape-snap" : ".snap-point"
-  )).map(snapPoint => {
-  return snapPoint.getBoundingClientRect().top;
-});
-const sticky1 = document.getElementById("sticky1");
-
-let currentSnapPoint = 0;
-// let currentSnapPoint = 8;
-// snap(true, false);
-
-let scrolling = false;
-let ts; //touch-start
-
-// FUNCTIONS //////////////////////////////////////////////////////////
-function snap(test1, test2) {
-  if (test1 & currentSnapPoint < snapPoints.length -1) {
-    scrollSnapContainer.style.transform = `translateY(-${snapPoints[currentSnapPoint + 1]}px)`;
-    currentSnapPoint += 1;
-  }
-  else if (test2 & currentSnapPoint > 0) {
-    scrollSnapContainer.style.transform = `translateY(-${snapPoints[currentSnapPoint - 1]}px)`;
-    currentSnapPoint -= 1;
-  }
-  if (viewportOrientation === "portrait" & (currentSnapPoint > 0 & currentSnapPoint < 5)) {
-    sticky1.style.opacity = 1;
-  }
-  else {
-    sticky1.style.opacity = 0;
-  }
-}
-
-// EVENTS ////////////////////////////////////////////////////////////
-scrollSnapContainer.addEventListener("wheel", e => {
-  e.preventDefault();
-  if (scrolling === false) {
-    scrolling = true;
-
-    snap(e.deltaY > 0, e.deltaY < 0);
-
+window.addEventListener("resize", e => {
+  if (refreshReady === false) {
+    refreshReady = true;
     const timerId = setTimeout(()=> {
-      scrolling = false;
-    }, 500);
-  };
-}, {passive: false});
-
-document.addEventListener("keydown", e => {
-  if (e.key === "ArrowUp" || e.key ==="ArrowDown") {
-    e.preventDefault();
-    if (e.repeat === false) {
-      snap(e.key === "ArrowDown", e.key === "ArrowUp");
-    }
+      window.location.reload();
+    }, 2000);
   }
 });
 
-scrollSnapContainer.addEventListener('touchstart', function (e){
-  ts = e.touches[0].clientY;
-}, {passive: false});
+// window.addEventListener("load", ()=> {
+//   const loadingScreen = document.getElementById("loading-screen");
+//   loadingScreen.style.opacity = 0;
+//   const timerId = setTimeout(()=> {
+//     loadingScreen.style.display = "none";
+//     const fadeIns = Array.from(document.querySelectorAll(".fade-in"));
+//     fadeIns.forEach(element => {
+//       element.style.opacity = 1;
+//     });
+//   }, 3000);
+// });
 
-scrollSnapContainer.addEventListener('touchend', function (e){
-  let te = e.changedTouches[0].clientY;
-  snap(ts > te + 5, ts < te - 5);
-}, {passive: false});
 
+
+// MODALS///////////////////////////////////////////////////////
 // CHAT MODAL ////////////////////////////////
 const chatModal = document.getElementById("chat-modal");
 const chatModalOpeners = Array.from(document.getElementsByClassName("chat-modal-opener"));
@@ -152,6 +89,7 @@ siteMenuModalClosers.forEach(element => {
   });
 });
 
+// LIVE CHAT //////////////////////////////////////////////////////////
 const liveChatSubmitButton = document.getElementById("live-chat-submit");
 const chatArea = document.getElementById("chat-area");
 const liveChatUserInput = document.getElementById("live-chat-user-input");
