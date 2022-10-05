@@ -1289,6 +1289,7 @@ main li {
   border-style: solid;
   padding: 1rem;
   line-height: 1.3;
+  transition: transform 0.5s ease-out;
 }
 
 main li .top-div {
@@ -1353,6 +1354,11 @@ main li h3 {
 
 main button.icon-pair svg {
   color: var(--color3);
+}
+
+/* BLOG INTERFACE //////////////////////////// */
+main li:has(.middle-div:hover) , main li:has(.middle-div:focus) {
+  transform: scale(1.2);
 }
 
 
